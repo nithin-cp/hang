@@ -12,24 +12,24 @@ def get_wordlist():
 def select_word(word_list):
     return random.sample(wordlist,1)[0]
 
-def play_hangman(a):
+def play_hangman(secret_word):
     turn =10
     li =[]
-    while len(li)< 10:
+    while len(li)< turn:
         gue =raw_input("guess the letter:")
         li.append(gue)
         ' '.join(li)
         print li
-        for letters in a:
+        for letters in secret_word:
             if letters in gue:
                 print letters
             else:
                 print"*"
-        if gue not in a:
+        if gue not in secret_word:
             print" wrong guess"
 
 
 wordlist = get_wordlist()
-secret = select_word(wordlist)
-play_hangman('cheese')
+secret_word = select_word(wordlist)
+play_hangman(secret_word)
 
