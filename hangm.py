@@ -13,7 +13,14 @@ def select_word(word_list):
     return random.sample(wordlist,1)[0]
 
 def play_hangman(a):
-            for letters in a:
+    turn =10
+    li =[]
+    while len(li)< 10:
+        gue =raw_input("guess the letter:")
+        li.append(gue)
+        ' '.join(li)
+        print li
+        for letters in a:
             if letters in gue:
                 print letters
             else:
